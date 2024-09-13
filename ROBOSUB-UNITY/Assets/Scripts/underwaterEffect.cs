@@ -4,6 +4,7 @@ using System.Collections;
 public class underwaterEffect : MonoBehaviour
 {
     public float waterHeight = 0.7f;
+    public float waterFog = 0.05f;
 
     private bool isUnderwater;
     private Color normalColor;
@@ -40,7 +41,7 @@ public class underwaterEffect : MonoBehaviour
     {
         Debug.Log("Under water");
         RenderSettings.fogColor = underwaterColor;
-        RenderSettings.fogDensity = 0.02f;
+        RenderSettings.fogDensity = waterFog;
 
     }
 }
