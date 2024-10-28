@@ -14,6 +14,7 @@ public class Motor_script : MonoBehaviour
     public int motor_number = 1;
     private float Power = 0;
     private float X;
+    public bool Flip = false;
     
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,12 @@ public class Motor_script : MonoBehaviour
         
         if(motor[0] == motor_number){
             motor[1] = -motor[1];
-            X = Math.Abs(motor[1]);
-            Power = (float)(0.0*Math.Pow(X,0) + 4.118907246276761*Math.Pow(X,1) + 8.821459800501257*Math.Pow(X,2) + 300.2409405269243*Math.Pow(X,3) + -12.828203731295387*Math.Pow(X,4) + -1835.0570460432466*Math.Pow(X,5) + -8.556796512341581*Math.Pow(X,6) + 6402.263737480421*Math.Pow(X,7) + 132.71963983709227*Math.Pow(X,8) + -12462.130805052753*Math.Pow(X,9) + -283.56130147752305*Math.Pow(X,10) + 13533.217409561114*Math.Pow(X,11) + 248.18171360272333*Math.Pow(X,12) + -7659.510998714309*Math.Pow(X,13) + -79.75205265552889*Math.Pow(X,14) + 1756.4475492089628*Math.Pow(X,15)); 
-            if(motor[1]<0){
-                Power = -1*Power;
+            X = (motor[1]);
+            if(Flip){
+                X = -X;
             }
+            Power = (float)(0.0*Math.Pow(X,0) + 4.118907246276761*Math.Pow(X,1) + 8.821459800501257*Math.Pow(X,2) + 300.2409405269243*Math.Pow(X,3) + -12.828203731295387*Math.Pow(X,4) + -1835.0570460432466*Math.Pow(X,5) + -8.556796512341581*Math.Pow(X,6) + 6402.263737480421*Math.Pow(X,7) + 132.71963983709227*Math.Pow(X,8) + -12462.130805052753*Math.Pow(X,9) + -283.56130147752305*Math.Pow(X,10) + 13533.217409561114*Math.Pow(X,11) + 248.18171360272333*Math.Pow(X,12) + -7659.510998714309*Math.Pow(X,13) + -79.75205265552889*Math.Pow(X,14) + 1756.4475492089628*Math.Pow(X,15)); 
+
         }
     }
 

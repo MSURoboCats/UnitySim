@@ -143,7 +143,7 @@ class HeadingController(Node):
             delta_z = self.cur_heading_der.z
 
             # PD controller with time step of .0625 / 16HZ (what control data is published at)
-            power_out = -(self.Kp*e_y + self.Kd*delta_z / .0625)
+            power_out = self.Kp*e_y + self.Kd*delta_z / .0625
 
             # publish motor values
             rot_twist = Twist()

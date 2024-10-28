@@ -170,8 +170,8 @@ class BuoyTask(Node):
         self.DETECTION_NAME = 'buoy_red'
         self.ROT_POWER = .2         # max power rotation
         self.SCAN_POWER = .1        # max power for scanning
-        self.DRIVE_POWER = .25       # power for driving 
-        self.BUMP_POWER = .3        # power for bumping the buoy
+        self.DRIVE_POWER = .5       # power for driving 
+        self.BUMP_POWER = .6        # power for bumping the buoy
         
 
         #-- SKIP THE FIRST STAGE AND JUST CONTINUE AT THE SAME DEPTH AS BEFORE
@@ -310,7 +310,7 @@ class BuoyTask(Node):
             drive_twist.linear.z = self.BUMP_POWER
             self.pub_drive_twist.publish(drive_twist)
             self.get_logger().info('Stage 4 loop broken: buoy close, last push')
-            time.sleep(3)
+            time.sleep(10)
             self.get_logger().info('Stage 4 complete: buoy bumped; scoot out of the way and hold')
 
 
