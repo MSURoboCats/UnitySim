@@ -43,9 +43,9 @@ public class WaterController : MonoBehaviour
     //Negative if below water
     public float DistanceToWater(Vector3 position, float timeSinceStart)
     {
-        float waterHeight = GetWaveYPos(position, timeSinceStart);
+        float waterHeight = transform.position.y;
         // print(position.y);
         float distanceToWater = position.y - waterHeight;
-        return distanceToWater - 0.7f;
+        return distanceToWater;
     }
 }
